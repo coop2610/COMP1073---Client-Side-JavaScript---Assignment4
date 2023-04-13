@@ -18,7 +18,7 @@ function fetchResults(event){
 function displayResults(json) {
     console.log(json);
 
-//comment
+//comment2
 
 
     /*
