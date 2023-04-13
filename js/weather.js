@@ -18,7 +18,7 @@ function fetchResults(event){
 function displayResults(json) {
     console.log(json);
 
-    // Clear out the old results…
+    /*
     while (section.firstChild) {
         section.removeChild(section.firstChild);
     };
@@ -29,9 +29,16 @@ function displayResults(json) {
         const para = document.createElement('p');
         para.textContent = 'No results returned.'
         section.appendChild(para);
+    } else {
+        for (let i = 0; i < weather.length; i++){
+
+        }
+
     }
 
-    
+    */
+
+
 
 }
 
