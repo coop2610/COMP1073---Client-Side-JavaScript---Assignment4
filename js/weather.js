@@ -18,7 +18,20 @@ function fetchResults(event){
 function displayResults(json) {
     console.log(json);
 
-  
+    // Clear out the old results…
+    while (section.firstChild) {
+        section.removeChild(section.firstChild);
+    };
+
+    let weather = json.response.docs;
+
+    if (weather.length === 0){
+        const para = document.createElement('p');
+        para.textContent = 'No results returned.'
+        section.appendChild(para);
+    }
+
+    
 
 }
 
