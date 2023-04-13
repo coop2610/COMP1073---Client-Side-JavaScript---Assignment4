@@ -18,6 +18,9 @@ function fetchResults(event){
 function displayResults(json) {
     console.log(json);
 
+//comment
+
+
     /*
     while (section.firstChild) {
         section.removeChild(section.firstChild);
