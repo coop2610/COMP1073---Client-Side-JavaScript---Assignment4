@@ -16,15 +16,9 @@ const searchLocation = document.querySelector('.button');
 const section = document.querySelector('section');
 
 
-/*
-searchLocation.addEventListener('click', function(){
-    let placeID = locationText.value;
-    console.log(placeID);
-    fetchResults(placeID);
-});
-*/
-
 searchLocation.onclick = function(){
+    console.log(locationText);
+    /*
     url = `${baseURL}point?find_places=${locationText}&sections=current&timezone=auto&language=en&units=auto&key=${key}`;
     fetch(url)
     .then(response => {
@@ -35,7 +29,25 @@ searchLocation.onclick = function(){
     })
     .then(text => section.textContent = text)
     .catch(error => section.textContent = `Could not fetch: ${error}`);
+    */
 }
+
+
+
+
+
+
+
+
+/*
+searchLocation.addEventListener('click', function(){
+    let placeID = locationText.value;
+    console.log(placeID);
+    fetchResults(placeID);
+});
+*/
+
+
 //urlPlace = `${baseURL}find_places?text=new%20york&language=en&key=${key}`;
 /*
 url = `${baseURL}point?find_places=${locationText}&sections=current&timezone=auto&language=en&units=auto&key=${key}`;
