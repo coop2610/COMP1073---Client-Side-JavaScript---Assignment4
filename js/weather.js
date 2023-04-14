@@ -12,7 +12,7 @@ const key = 'cldwoqx5laujdwap6embjr6r2z7b3g5bmpn9mvuf';
 let url;
 
 const locationText = document.querySelector('.location');
-const searchLocation = document.querySelector('.search');
+const searchLocation = document.querySelector('.button');
 const section = document.querySelector('section');
 
 
