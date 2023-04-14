@@ -15,7 +15,8 @@
 	<meta charset="utf-8" />
 	<title>COMP1073 Client-Side JavaScript</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<!-- <script src="js/weather.js" defer></script> -->
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+    <script src="js/weather.js" defer></script>
 </head>
 <body>
     <form>
@@ -30,27 +31,3 @@
 
 </footer>
 
-<script>
-
-var search = document.querySelector('location');
-var display = document.querySelector('pre');
-let url;
-
-const baseURL = 'https://api.weatherstack.com/current';
-const key = 'b1791ffb12a04e6011cbb08f8186e847';
-
-function fetchResults(event){
-    event.preventDefault();
-    url = `${baseURL}?access_key=${key}&query=${location.value}&forecast=1`;
-    fetch(url).then(function (result){
-        return result.json();
-    }).then(function (json){
-        displayResults(json);
-    })
-};
-
-function displayResults(json) {
-    console.log(json);
-}
-
-</script>
