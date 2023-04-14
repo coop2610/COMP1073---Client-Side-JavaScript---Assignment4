@@ -15,11 +15,20 @@ const locationText = document.querySelector('.location');
 const searchLocation = document.querySelector('.search');
 const section = document.querySelector('section');
 
+window.onload=function(){
+    searchLocation.addEventListener('submit', function(){
+        let placeID = locationText.value;
+    console.log(placeID);
+    fetchResults(placeID);
+    });
+}
+/*
 searchLocation.addEventListener('submit', function(){
     let placeID = locationText.value;
     console.log(placeID);
     fetchResults(placeID);
 });
+*/
 //urlPlace = `${baseURL}find_places?text=new%20york&language=en&key=${key}`;
 
 //url = `${baseURL}point?find_places=${locationText}&sections=current&timezone=auto&language=en&units=auto&key=${key}`;
