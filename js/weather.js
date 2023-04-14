@@ -7,31 +7,31 @@
 	Amanda Cooper - 200507894 
 
 */
+
+//connect to API
 const baseURL = 'https://www.meteosource.com/api/v1/free/';
 const key = 'cldwoqx5laujdwap6embjr6r2z7b3g5bmpn9mvuf';
 let url;
 
+//select HTML elements
 const locationText = document.querySelector('.location');
 const searchLocation = document.querySelector('.button');
 const h2 = document.querySelector('h2');
-/*
-const cloudCover = document.querySelector('.cloudCover');
-const summary = document.querySelector('.summary');
-const temp = document.querySelector('.temp');
-const windSpeed = document.querySelector('.windSpeed');
-*/
 const p = document.querySelector('p');
 
+//onClick function
 searchLocation.onclick = function(){
     console.log(locationText.value);
 
+    //collect input
     var locationName = locationText.value;
     locationName.replace(' ', '%20');
     console.log(locationName.tolowerCase);
 
+    //form url
     url = `${baseURL}find_places?text=${locationText.value}&language=en&key=${key}`;
 
-    console.log(url);
+    //fetch data using url
     fetch(url)
     .then(response => {
         if (!response.ok){
@@ -41,14 +41,14 @@ searchLocation.onclick = function(){
         return jsonLocation;
     })
     .then(function (jsonLocation){
+        //send data to functions isolateLocation
         isolateLocation(jsonLocation);
         displayResults(locationName);
     })
-    //.catch(error => section.textContent = `Could not fetch: ${error}`);
 
 }
 
-
+//get place_id from location URL
 function isolateLocation(jsonLocation){
     console.log(jsonLocation);
 
@@ -60,6 +60,7 @@ function isolateLocation(jsonLocation){
 
 }
 
+//use the place_id to fetch weather information
 function getWeather(placeId){
     urlWeather = `${baseURL}point?place_id=${placeId}&sections=current&timezone=auto&language=en&units=auto&key=${key}`;
     
@@ -75,41 +76,31 @@ function getWeather(placeId){
     displayResults(jsonWeather);
     console.log(jsonWeather);
 })
-//.catch(error => section.textContent = `Could not fetch: ${error}`);
+
 }
 
-
+//dislplay weather information 
 function displayResults(jsonWeather, locationName){
 
     console.log(jsonWeather.current.summary);
 
-    const header = (locationText.value).split(" ");
+    //change location to camelcase
+    const header = (locationName).split(" ");
     for (let i = 0; i < header.length; i++){
         header[i] = header[i].charAt(0).toUpperCase() + header[i].slice(1);
     }
     let title = header.join(' ');
-    /*
-    let sum = jsonWeather.current.summary;
-    let cloudC = jsonWeather.current.cloud_cover;
-
-    h2.textContent = 'Location: ' + title;
-    summary.textContent = 'Summary: ' + sum;
-    cloudCover.textContent = 'Cloud Cover: ' + cloudC;
-    temp.textContent = 'Tempurature' + jsonWeather.current.temperature;
-    windSpeed.textContent = 'Wind Speed: ' + jsonWeather.current.wind.speed;
-*/
 
     let summary = jsonWeather.current.summary;
     let cloudCover = jsonWeather.current.cloud_cover;
     let temp = jsonWeather.current.temperature;
     let windSpeed = jsonWeather.current.wind.speed;
 
+    //output data
     h2.textContent = 'Location: ' + title;
-    let text = `Summary: ${summary}\r\nCloud Cover: ${cloudCover}\r\nTemperature: ${temp}
-    \r\nWind Speed: ${windSpeed}`
-    p.textContent = text;
+    p.textContent = `Summary: ${summary}\nCloud Cover: ${cloudCover}\nTemperature: ${temp}
+    \nWind Speed: ${windSpeed}`;
    
-    
 
 }
 
