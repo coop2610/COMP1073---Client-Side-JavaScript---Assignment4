@@ -20,9 +20,9 @@ const searchLocation = document.querySelector('.search');
 
 //url = `${baseURL}point?find_places=${locationText.value}&sections=current&timezone=auto&language=en&units=auto&key=${key}`;
 
+url = `https://www.meteosource.com/api/v1/free/find_places?text=new%20york&language=en&key=cldwoqx5laujdwap6embjr6r2z7b3g5bmpn9mvuf`
 
-
-fetch(`https://www.meteosource.com/api/v1/free/find_places?text=new%20york&language=en&key=cldwoqx5laujdwap6embjr6r2z7b3g5bmpn9mvuf`)
+fetch(url)
     .then(response => {
         if (!response.ok){
             throw new Error(`HTTP error: ${response.status}`);
