@@ -33,16 +33,38 @@ searchLocation.onclick = function(){
         if (!response.ok){
             throw new Error(`HTTP error: ${response.status}`);
         }
-        return response.text();
+        //return response.text();
+        return response.json();
     })
-    .then(text => section.textContent = text)
+    //.then(text => section.textContent = text)
+    .then(function (json){
+        displayResults(json);
+    })
     .catch(error => section.textContent = `Could not fetch: ${error}`);
 
 }
 
 
+function displayResults(json){
+    console.log(json);
+    /*
+    while (section.firstChild) {
+        section.removeChild(section.firstChild);
+    };
+    let locations = json.response.docs;
 
+    if (locations.length === 0){
+        const noResults = document.createElement('p');
+        noResults.textContent = 'No results returned.'
+        section.appendChild(noResults);
+    } else {
+        for(let i = 0; i < locations.length; i++){
+            
+        }
+    }
+    */
 
+}
 
 
 
