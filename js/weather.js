@@ -23,8 +23,10 @@ searchLocation.onclick = function(){
     locationName.replace(' ', '%20').tolowerCase();
     console.log(locationName);
 
+    url = `${baseURL}find_places?text=${locationText.value}&language=en&key=${key}`;
 
-    url = `${baseURL}point?find_places=${locationText.value}&sections=current&timezone=auto&language=en&units=auto&key=${key}`;
+
+    //url = `${baseURL}find_places?text=${locationText.value}&sections=current&timezone=auto&language=en&units=auto&key=${key}`;
     console.log(url);
     fetch(url)
     .then(response => {
