@@ -74,9 +74,7 @@ function getWeather(placeId){
 
 function displayResults(jsonWeather){
 
-    while (section.firstChild) {
-        section.removeChild(section.firstChild);
-    };
+
   
     //const loc = document.createElement('h2');
     //const country = document.createElement('p');
