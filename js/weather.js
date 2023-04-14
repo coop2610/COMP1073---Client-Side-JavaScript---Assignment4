@@ -8,33 +8,35 @@
 
 */
 
-var search = document.querySelector('location');
+var search = document.querySelector('search');
 var display = document.querySelector('pre');
 let url;
 
 const baseURL = 'https://api.weatherstack.com/current';
 const key = 'b1791ffb12a04e6011cbb08f8186e847';
 
+search.addEventListener('submit', fetchResults);
+
 function fetchResults(event){
     event.preventDefault();
     url = `${baseURL}?access_key=${key}&query=${location.value}&forecast=1`;
-
+    
     fetch(url).then(function (result){
-        return result.current();
-    }).then(function (current){
-        displayResults(current);
+        return result.json();
+    }).then(function (json){
+        displayResults(json);
     })
 };
 
-function displayResults(current) {
-    console.log(current);
+function displayResults(json) {
+    console.log(json);
 }
 
-    // while (section.firstChild) {
-    //     section.removeChild(section.firstChild);
-    // };
+    while (section.firstChild) {
+         section.removeChild(section.firstChild);
+     };
 
-    let weather = current.response.docs;
+    let weather = json.response.docs;
 
     if (weather.length === 0){
         const para = document.createElement('p');
