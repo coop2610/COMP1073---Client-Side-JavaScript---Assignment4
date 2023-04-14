@@ -55,7 +55,6 @@ function isolateLocation(jsonLocation){
     let placeId = firstInstance.place_id;
     console.log(firstInstance.place_id);
     getWeather(placeId);
-    displayResults(placeId);
 
 }
 
@@ -78,7 +77,7 @@ function getWeather(placeId){
 }
 
 
-function displayResults(jsonWeather){
+function displayResults(jsonWeather, locationName){
 
     console.log(jsonWeather.current.summary);
 
