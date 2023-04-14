@@ -17,6 +17,12 @@ const section = document.querySelector('section');
 
 
 
+searchLocation.addEventListener('click', function(){
+    let placeID = locationText.value;
+    console.log(placeID);
+    fetchResults(placeID);
+});
+
 //urlPlace = `${baseURL}find_places?text=new%20york&language=en&key=${key}`;
 
 //url = `${baseURL}point?find_places=${locationText}&sections=current&timezone=auto&language=en&units=auto&key=${key}`;
@@ -79,11 +85,7 @@ function displayResults(json) {
 
 
 
-searchLocation.addEventListener('submit', function(){
-    let placeID = locationText.value;
-    console.log(placeID);
-    fetchResults(placeID);
-});
+
 
 
 
