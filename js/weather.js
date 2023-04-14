@@ -48,8 +48,8 @@ searchLocation.onclick = function(){
 function displayResults(json){
     console.log(json);
 
-    let locations = json.response.docs;
-    console.log(locations[0]);
+    //let locations = json.response.docs;
+    console.log(json[0]);
 
     /*
     while (section.firstChild) {
