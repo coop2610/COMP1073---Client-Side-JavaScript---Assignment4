@@ -16,9 +16,13 @@ const section = document.querySelector('section');
 const searchLocation = document.querySelector('.search');
 
 //search.addEventListener('submit', fetchResults);
-urlPlace = `${baseURL}find_places?text=new%20york&language=en&key=${key}`;
+//urlPlace = `${baseURL}find_places?text=new%20york&language=en&key=${key}`;
 
-fetch(url)
+//url = `${baseURL}point?find_places=${locationText.value}&sections=current&timezone=auto&language=en&units=auto&key=${key}`;
+
+
+
+fetch(`https://www.meteosource.com/api/v1/free/find_places?text=new%20york&language=en&key=cldwoqx5laujdwap6embjr6r2z7b3g5bmpn9mvuf`)
     .then(response => {
         if (!response.ok){
             throw new Error(`HTTP error: ${response.status}`);
@@ -35,16 +39,16 @@ url = `${baseURL}point?find_places=${locationText.value}&sections=current&timezo
 function fetchResults(event){
     event.preventDefault();
     url = `${baseURL}?access_key=${key}&query=${locationText.value}&forecast=1`;
-  *///  
-/*
+  
+
     
     fetch(url).then(function (result){
         return result.json();
     }).then(function (json){
         displayResults(json);
     })
-//};
-
+};
+*/
 function displayResults(json) {
     console.log(json);
 }
