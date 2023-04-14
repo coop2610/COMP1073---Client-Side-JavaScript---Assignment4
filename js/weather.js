@@ -15,7 +15,7 @@ const locationText = document.querySelector('location');
 const section = document.querySelector('section');
 const searchLocation = document.querySelector('.search');
 
-search.addEventListener('submit', fetchResults);
+//search.addEventListener('submit', fetchResults);
 url = `${baseURL}?access_key=${key}&query=Ontario&forecast=1`;
 
 async function logJSONData() {
