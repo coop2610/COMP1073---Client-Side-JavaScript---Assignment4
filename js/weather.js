@@ -100,7 +100,7 @@ function displayResults(jsonWeather, locationName){
 */
 
     h2.textContent = 'Location: ' + title;
-    p.textContent = jsonWeather.current.summary;
+    p.textContent = 'Summary: ' + jsonWeather.current.summary;
    
     
 
