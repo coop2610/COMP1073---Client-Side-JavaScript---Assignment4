@@ -14,11 +14,13 @@ let url;
 const locationText = document.querySelector('.location');
 const searchLocation = document.querySelector('.button');
 const h2 = document.querySelector('h2');
+/*
 const cloudCover = document.querySelector('.cloudCover');
 const summary = document.querySelector('.summary');
 const temp = document.querySelector('.temp');
 const windSpeed = document.querySelector('.windSpeed');
-
+*/
+const p = document.querySelector('p');
 
 searchLocation.onclick = function(){
     console.log(locationText.value);
@@ -86,14 +88,19 @@ function displayResults(jsonWeather, locationName){
         header[i] = header[i].charAt(0).toUpperCase() + header[i].slice(1);
     }
     let title = header.join(' ');
+    /*
+    let sum = jsonWeather.current.summary;
     let cloudC = jsonWeather.current.cloud_cover;
 
     h2.textContent = 'Location: ' + title;
+    summary.textContent = 'Summary: ' + sum;
     cloudCover.textContent = 'Cloud Cover: ' + cloudC;
-    summary.textContent = 'Summary: ' + jsonWeather.current.summary;
     temp.textContent = 'Tempurature' + jsonWeather.current.temperature;
     windSpeed.textContent = 'Wind Speed: ' + jsonWeather.current.wind.speed;
+*/
 
+    h2.textContent = 'Location: ' + title;
+    p.textContent = jsonWeather.current.summary;
    
     
 
