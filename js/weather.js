@@ -35,7 +35,7 @@ function displayResults(json) {
     while (section.firstChild) {
          section.removeChild(section.firstChild);
      };
-
+/*
     let weather = json.response.docs;
 
     if (weather.length === 0){
@@ -48,6 +48,7 @@ function displayResults(json) {
         }
 
     }
+    */
 
 
 
