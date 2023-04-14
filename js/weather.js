@@ -87,13 +87,17 @@ function displayResults(jsonWeather){
     //const weather = jsonWeather;
 
     //const displayWeather = document.createElement('p');
-
+/*
     const header = (locationText.value).split(" ");
     for (let i = 0; i < header.length; i++){
         header[i] = header[i][0].toUpperCase() + header[i].substr(1);
     }
     header.join(" ");
-
+*/
+    const header = (locationText.value).split(" ");
+    header.map((header) => { 
+        return header[0].toUpperCase() + header.substring(1); 
+    }).join(" ");
     h2.textContent = header;
 
     //section.textContent = jsonWeather.current.;
