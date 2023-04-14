@@ -16,10 +16,21 @@ const section = document.querySelector('section');
 const searchLocation = document.querySelector('.search');
 
 search.addEventListener('submit', fetchResults);
+url = `${baseURL}?access_key=${key}&query=Ontario&forecast=1`;
 
+async function logJSONData() {
+    const response = await fetch(url);
+    const jsonData = await response.json();
+    console.log(jsonData);
+  }
+
+
+/*
 function fetchResults(event){
     event.preventDefault();
     url = `${baseURL}?access_key=${key}&query=${locationText.value}&forecast=1`;
+    
+
     
     fetch(url).then(function (response){
         return response.json();
@@ -35,7 +46,7 @@ function displayResults(json) {
     while (section.firstChild) {
          section.removeChild(section.firstChild);
      };
-/*
+
     let weather = json.response.docs;
 
     if (weather.length === 0){
