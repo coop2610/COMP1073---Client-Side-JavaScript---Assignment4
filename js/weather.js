@@ -87,7 +87,7 @@ function displayResults(jsonWeather, locationName){
     }
     let title = header.join(' ');
 
-    h2.textContent = title;
+    h2.textContent = 'Location: ' + title;
     cloudCover.textContent = 'Cloud Cover: ' + jsonWeather.current.cloud_cover;
     summary.textContent = 'Summary: ' + jsonWeather.current.summary;
     temp.textContent = 'Tempurature' + jsonWeather.current.temperature;
