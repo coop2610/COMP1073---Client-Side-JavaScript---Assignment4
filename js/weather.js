@@ -7,13 +7,14 @@
 	Amanda Cooper - 200507894 
 
 */
-
-var search = document.querySelector('search');
-var display = document.querySelector('pre');
-let url;
-
 const baseURL = 'https://api.weatherstack.com/current';
 const key = 'b1791ffb12a04e6011cbb08f8186e847';
+let url;
+
+var location = document.querySelector('location');
+var location = document.querySelector('location');
+const section = document.querySelector('section');
+const searchLocation = document.querySelector('.search');
 
 search.addEventListener('submit', fetchResults);
 
