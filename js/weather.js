@@ -20,8 +20,8 @@ searchLocation.onclick = function(){
     console.log(locationText.value);
 
     var locationName = locationText.value;
-    locationName.replace(' ', '%20').tolowerCase();
-    console.log(locationName);
+    locationName.replace(' ', '%20');
+    console.log(locationName.tolowerCase);
 
     url = `${baseURL}find_places?text=${locationText.value}&language=en&key=${key}`;
 
