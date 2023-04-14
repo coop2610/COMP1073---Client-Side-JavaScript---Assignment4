@@ -28,8 +28,8 @@ function fetchResults(event){
   *///  
 
     
-    fetch(url).then(function (response){
-        return response.json();
+    fetch(url).then(function (result){
+        return result.json();
     }).then(function (json){
         displayResults(json);
     })
