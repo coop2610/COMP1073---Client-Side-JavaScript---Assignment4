@@ -25,7 +25,7 @@ searchLocation.addEventListener('click', function(){
 */
 
 searchLocation.onclick = function(){
-    url = `${baseURL}point?find_places=${locationText}&sections=current&timezone=auto&language=en&units=auto&key=${key}`;
+    url = `${baseURL}point?find_places=${locationText.value}&sections=current&timezone=auto&language=en&units=auto&key=${key}`;
     fetch(url)
     .then(response => {
         if (!response.ok){
