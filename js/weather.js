@@ -18,7 +18,12 @@ const section = document.querySelector('section');
 
 searchLocation.onclick = function(){
     console.log(locationText.value);
-    //var locationName = locationText.value;
+
+    var locationName = locationText.value;
+    locationName.replace(' ', '%20').tolowerCase();
+    console.log(locationName);
+
+
     url = `${baseURL}point?find_places=${locationText.value}&sections=current&timezone=auto&language=en&units=auto&key=${key}`;
     console.log(url);
     fetch(url)
