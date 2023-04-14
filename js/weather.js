@@ -40,6 +40,7 @@ searchLocation.onclick = function(){
     })
     .then(function (jsonLocation){
         isolateLocation(jsonLocation);
+        displayResults(locationName);
     })
     .catch(error => section.textContent = `Could not fetch: ${error}`);
 
@@ -81,13 +82,6 @@ function displayResults(jsonWeather){
 
     console.log(jsonWeather.current.summary);
 
-  
-    //const loc = document.createElement('h2');
-    //const country = document.createElement('p');
-    //const weather = jsonWeather;
-
-    //const displayWeather = document.createElement('p');
-
     const header = (locationText.value).split(" ");
     for (let i = 0; i < header.length; i++){
         header[i] = header[i].charAt(0).toUpperCase() + header[i].slice(1);
@@ -95,9 +89,10 @@ function displayResults(jsonWeather){
     let title = header.join(' ');
 
     h2.textContent = title;
-
-    //section.textContent = jsonWeather.current.;
-
+    cloudCover.textContent = 'Cloud Cover: ' + jsonWeather.current.cloud_cover;
+    summary.textContent = 'Summary: ' + jsonWeather.current.summary;
+    temp.textContent = 'Tempurature' + jsonWeather.current.temperature;
+    windSpeed.textContent = 'Wind Speed: ' + jsonWeather.current.wind.speed;
 
    
     
