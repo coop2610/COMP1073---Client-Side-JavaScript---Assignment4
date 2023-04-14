@@ -29,10 +29,9 @@ function displayResults(json) {
     console.log(json);
 }
 
-    
-    while (section.firstChild) {
-        section.removeChild(section.firstChild);
-    };
+    // while (section.firstChild) {
+    //     section.removeChild(section.firstChild);
+    // };
 
     let weather = json.response.docs;
 
