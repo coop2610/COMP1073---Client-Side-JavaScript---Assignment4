@@ -12,8 +12,8 @@ const key = 'cldwoqx5laujdwap6embjr6r2z7b3g5bmpn9mvuf';
 let url;
 
 const locationText = document.querySelector('.location');
-const section = document.querySelector('section');
 const searchLocation = document.querySelector('.search');
+const section = document.querySelector('section');
 
 search.addEventListener('submit', fetchResults);
 //urlPlace = `${baseURL}find_places?text=new%20york&language=en&key=${key}`;
