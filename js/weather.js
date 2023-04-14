@@ -81,10 +81,10 @@ function displayResults(jsonWeather){
     //const loc = document.createElement('h2');
     //const country = document.createElement('p');
     
-    const weather = document.createElement('p');
-    weather.textContent = jsonWeather.current;
+    //const weather = document.createElement('p');
+    //weather.textContent = jsonWeather.current;
 
-        
+    section.textContent = jsonWeather;
     
 
 }
