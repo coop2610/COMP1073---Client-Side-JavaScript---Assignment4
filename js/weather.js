@@ -99,8 +99,13 @@ function displayResults(jsonWeather, locationName){
     windSpeed.textContent = 'Wind Speed: ' + jsonWeather.current.wind.speed;
 */
 
+    let summary = jsonWeather.current.summary;
+    let cloudCover = jsonWeather.current.cloud_cover;
+    let temp = jsonWeather.current.temperature;
+    let windSpeed = jsonWeather.current.wind.speed;
+
     h2.textContent = 'Location: ' + title;
-    p.textContent = 'Summary: ' + jsonWeather.current.summary;
+    p.textContent = `Summary: ${summary}\nCloud Cover: ${cloudCover}\nTemperature: ${temp}\nWind Speed: ${windSpeed}`;
    
     
 
