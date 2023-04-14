@@ -7,8 +7,8 @@
 	Amanda Cooper - 200507894 
 
 */
-const baseURL = 'https://api.weatherstack.com/current';
-const key = 'b1791ffb12a04e6011cbb08f8186e847';
+const baseURL = 'https://www.meteosource.com/api/v1/free/';
+const key = 'cldwoqx5laujdwap6embjr6r2z7b3g5bmpn9mvuf';
 let url;
 
 const locationText = document.querySelector('location');
@@ -16,7 +16,7 @@ const section = document.querySelector('section');
 const searchLocation = document.querySelector('.search');
 
 //search.addEventListener('submit', fetchResults);
-url = `${baseURL}?access_key=${key}&query=Ontario&forecast=1`;
+urlPlace = `${baseURL}find_places?text=new%20york&language=en&key=${key}`;
 
 async function logJSONData() {
     const response = await fetch(url);
@@ -26,6 +26,9 @@ async function logJSONData() {
 
 
 /*
+
+url = `${baseURL}point?find_places=${locationText.value}&sections=current&timezone=auto&language=en&units=auto&key=${key}`;
+
 function fetchResults(event){
     event.preventDefault();
     url = `${baseURL}?access_key=${key}&query=${locationText.value}&forecast=1`;
