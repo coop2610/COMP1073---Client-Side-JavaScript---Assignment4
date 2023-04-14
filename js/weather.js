@@ -23,9 +23,21 @@ searchLocation.addEventListener('click', function(){
     fetchResults(placeID);
 });
 */
-searchLocation.addEventListener('click', fetchResults);
-//urlPlace = `${baseURL}find_places?text=new%20york&language=en&key=${key}`;
 
+searchLocation.onclick = function(){
+    url = `${baseURL}point?find_places=${locationText}&sections=current&timezone=auto&language=en&units=auto&key=${key}`;
+    fetch(url)
+    .then(response => {
+        if (!response.ok){
+            throw new Error(`HTTP error: ${response.status}`);
+        }
+        return response.text();
+    })
+    .then(text => section.textContent = text)
+    .catch(error => section.textContent = `Could not fetch: ${error}`);
+}
+//urlPlace = `${baseURL}find_places?text=new%20york&language=en&key=${key}`;
+/*
 url = `${baseURL}point?find_places=${locationText}&sections=current&timezone=auto&language=en&units=auto&key=${key}`;
 
 function fetchResults(url){
@@ -41,7 +53,7 @@ function fetchResults(url){
         .then(text => section.textContent = text)
         .catch(error => section.textContent = `Could not fetch: ${error}`);
 }
-
+*/
 /*
 url = `${baseURL}point?find_places=${locationText.value}&sections=current&timezone=auto&language=en&units=auto&key=${key}`;
 
