@@ -92,9 +92,9 @@ function displayResults(jsonWeather){
     for (let i = 0; i < header.length; i++){
         header[i] = header[i].charAt(0).toUpperCase() + header[i].slice(1);
     }
-    header.join(' ');
+    let title = header.join(' ');
 
-    h2.textContent = header;
+    h2.textContent = title;
 
     //section.textContent = jsonWeather.current.;
 
