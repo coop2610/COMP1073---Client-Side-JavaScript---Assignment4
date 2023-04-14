@@ -12,7 +12,6 @@ const key = 'b1791ffb12a04e6011cbb08f8186e847';
 let url;
 
 const location = document.querySelector('location');
-const location = document.querySelector('location');
 const section = document.querySelector('section');
 const searchLocation = document.querySelector('.search');
 
