@@ -26,7 +26,6 @@ searchLocation.onclick = function(){
     //collect input
     var locationName = locationText.value;
     locationName.replace(' ', '%20');
-    console.log(locationName.tolowerCase);
 
     //form url
     url = `${baseURL}find_places?text=${locationText.value}&language=en&key=${key}`;
@@ -49,12 +48,9 @@ searchLocation.onclick = function(){
 
 //get place_id from location URL
 function isolateLocation(jsonLocation){
-    console.log(jsonLocation);
-
     console.log(jsonLocation[0]);
     let firstInstance = jsonLocation[0];
     let placeId = firstInstance.place_id;
-    console.log(firstInstance.place_id);
     getWeather(placeId);
 
 }
@@ -80,8 +76,6 @@ function getWeather(placeId){
 
 //dislplay weather information 
 function displayResults(jsonWeather){
-
-    console.log(jsonWeather.current.summary);
 
     //change location to uppercase
     const header = (locationText.value).split(" ");
