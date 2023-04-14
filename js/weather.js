@@ -50,6 +50,8 @@ function displayResults(json){
 
     //let locations = json.response.docs;
     console.log(json[0]);
+    let firstInstance = json[0];
+    console.log(firstInstance.place_id);
 
     /*
     while (section.firstChild) {
