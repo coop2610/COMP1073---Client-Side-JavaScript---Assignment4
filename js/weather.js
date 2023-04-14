@@ -21,8 +21,8 @@ function fetchResults(event){
     event.preventDefault();
     url = `${baseURL}?access_key=${key}&query=${location.value}&forecast=1`;
     
-    fetch(url).then(function (result){
-        return result.json();
+    fetch(url).then(function (response){
+        return response.json();
     }).then(function (json){
         displayResults(json);
     })
