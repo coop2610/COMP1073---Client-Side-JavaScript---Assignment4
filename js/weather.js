@@ -82,7 +82,7 @@ function displayResults(jsonWeather){
     //const weather = jsonWeather;
 
     //const displayWeather = document.createElement('p');
-    section.textContent = jsonWeather.current.summary;
+    section.textContent = jsonWeather.current;
 
 
    
