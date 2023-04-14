@@ -78,7 +78,7 @@ function displayResults(jsonWeather){
   
     //const loc = document.createElement('h2');
     //const country = document.createElement('p');
-    let weather = jsonWeather.response.docs;
+    let weather = jsonWeather.docs;
 
     const displayWeather = document.createElement('p');
     displayWeather.textContent = weather.current;
