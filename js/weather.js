@@ -18,21 +18,14 @@ const searchLocation = document.querySelector('.search');
 //search.addEventListener('submit', fetchResults);
 urlPlace = `${baseURL}find_places?text=new%20york&language=en&key=${key}`;
 
-async function logJSONData() {
-    const response = await fetch(url);
-    const jsonData = await response.json();
-    console.log(jsonData);
-  }
-
 
 /*
-
 url = `${baseURL}point?find_places=${locationText.value}&sections=current&timezone=auto&language=en&units=auto&key=${key}`;
 
 function fetchResults(event){
     event.preventDefault();
     url = `${baseURL}?access_key=${key}&query=${locationText.value}&forecast=1`;
-    
+  *///  
 
     
     fetch(url).then(function (response){
@@ -40,8 +33,8 @@ function fetchResults(event){
     }).then(function (json){
         displayResults(json);
     })
-};
-
+//};
+/*
 function displayResults(json) {
     console.log(json);
 }
