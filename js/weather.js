@@ -16,19 +16,20 @@ const searchLocation = document.querySelector('.search');
 const section = document.querySelector('section');
 
 
-
+/*
 searchLocation.addEventListener('click', function(){
     let placeID = locationText.value;
     console.log(placeID);
     fetchResults(placeID);
 });
-
+*/
+searchLocation.addEventListener('click', fetchResults);
 //urlPlace = `${baseURL}find_places?text=new%20york&language=en&key=${key}`;
 
-//url = `${baseURL}point?find_places=${locationText}&sections=current&timezone=auto&language=en&units=auto&key=${key}`;
+url = `${baseURL}point?find_places=${locationText}&sections=current&timezone=auto&language=en&units=auto&key=${key}`;
 
-function fetchResults(placeID){
-    url = `${baseURL}point?find_places=${placeID}&sections=current&timezone=auto&language=en&units=auto&key=${key}`;
+function fetchResults(url){
+    //url = `${baseURL}point?find_places=${placeID}&sections=current&timezone=auto&language=en&units=auto&key=${key}`;
 
     fetch(url)
         .then(response => {
