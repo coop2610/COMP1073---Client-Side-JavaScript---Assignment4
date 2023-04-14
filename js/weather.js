@@ -18,7 +18,7 @@ const searchLocation = document.querySelector('.search');
 search.addEventListener('submit', fetchResults);
 //urlPlace = `${baseURL}find_places?text=new%20york&language=en&key=${key}`;
 
-url = `${baseURL}point?find_places=${locationText.value}&sections=current&timezone=auto&language=en&units=auto&key=${key}`;
+url = `${baseURL}point?find_places=${locationText}&sections=current&timezone=auto&language=en&units=auto&key=${key}`;
 
 function fetchResults(url){
     fetch(url)
