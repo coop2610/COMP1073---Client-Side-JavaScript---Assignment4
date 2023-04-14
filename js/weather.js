@@ -78,11 +78,12 @@ function displayResults(jsonWeather){
   
     //const loc = document.createElement('h2');
     //const country = document.createElement('p');
-    
-    //const weather = document.createElement('p');
-    //weather.textContent = jsonWeather.current;
+    let weather = jsonWeather.response.docs;
 
-    section.textContent = jsonWeather.document;
+    const displayWeather = document.createElement('p');
+    displayWeather.textContent = weather.current;
+
+    //section.textContent = jsonWeather.document;
     
 
 }
