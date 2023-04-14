@@ -47,11 +47,16 @@ searchLocation.onclick = function(){
 
 function displayResults(json){
     console.log(json);
+
+    let locations = json.response.docs;
+    console.log(locations[0]);
+
     /*
     while (section.firstChild) {
         section.removeChild(section.firstChild);
     };
     let locations = json.response.docs;
+
 
     if (locations.length === 0){
         const noResults = document.createElement('p');
@@ -59,7 +64,11 @@ function displayResults(json){
         section.appendChild(noResults);
     } else {
         for(let i = 0; i < locations.length; i++){
-            
+            const loc = document.createElement('h2');
+            const country = document.createElement('p');
+            const lat = document.createElement('p');
+            const long = document.createElement('p');
+            const time = document.createElement('p');
         }
     }
     */
