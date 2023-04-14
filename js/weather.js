@@ -11,7 +11,7 @@ const baseURL = 'https://api.weatherstack.com/current';
 const key = 'b1791ffb12a04e6011cbb08f8186e847';
 let url;
 
-const location = document.querySelector('location');
+const locationText = document.querySelector('location');
 const section = document.querySelector('section');
 const searchLocation = document.querySelector('.search');
 
@@ -19,7 +19,7 @@ search.addEventListener('submit', fetchResults);
 
 function fetchResults(event){
     event.preventDefault();
-    url = `${baseURL}?access_key=${key}&query=${location.value}&forecast=1`;
+    url = `${baseURL}?access_key=${key}&query=${locationText.value}&forecast=1`;
     
     fetch(url).then(function (response){
         return response.json();
