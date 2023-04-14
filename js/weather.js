@@ -14,10 +14,10 @@ let url;
 const locationText = document.querySelector('.location');
 const searchLocation = document.querySelector('.button');
 const h2 = document.querySelector('h2');
-const cloudCover = document.querySelector('cloudCover');
-const summary = document.querySelector('summary');
-const temp = document.querySelector('temp');
-const windSpeed = document.querySelector('windSpeed');
+const cloudCover = document.querySelector('.cloudCover');
+const summary = document.querySelector('.summary');
+const temp = document.querySelector('.temp');
+const windSpeed = document.querySelector('.windSpeed');
 
 
 searchLocation.onclick = function(){
