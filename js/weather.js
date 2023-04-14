@@ -15,23 +15,22 @@ const locationText = document.querySelector('location');
 const section = document.querySelector('section');
 const searchLocation = document.querySelector('.search');
 
-//search.addEventListener('submit', fetchResults);
+search.addEventListener('submit', fetchResults);
 //urlPlace = `${baseURL}find_places?text=new%20york&language=en&key=${key}`;
 
-//url = `${baseURL}point?find_places=${locationText.value}&sections=current&timezone=auto&language=en&units=auto&key=${key}`;
+url = `${baseURL}point?find_places=${locationText.value}&sections=current&timezone=auto&language=en&units=auto&key=${key}`;
 
-url = `https://www.meteosource.com/api/v1/free/find_places?text=new%20york&language=en&key=cldwoqx5laujdwap6embjr6r2z7b3g5bmpn9mvuf`
-
-fetch(url)
-    .then(response => {
-        if (!response.ok){
-            throw new Error(`HTTP error: ${response.status}`);
-        }
-        return response.text();
-    })
-    .then(text => section.textContent = text)
-    .catch(error => section.textContent = `Could not fetch: ${error}`);
-
+function fetchResults(url){
+    fetch(url)
+        .then(response => {
+            if (!response.ok){
+                throw new Error(`HTTP error: ${response.status}`);
+            }
+            return response.text();
+        })
+        .then(text => section.textContent = text)
+        .catch(error => section.textContent = `Could not fetch: ${error}`);
+}
 
 /*
 url = `${baseURL}point?find_places=${locationText.value}&sections=current&timezone=auto&language=en&units=auto&key=${key}`;
