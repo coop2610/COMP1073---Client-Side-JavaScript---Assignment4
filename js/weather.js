@@ -13,7 +13,11 @@ let url;
 
 const locationText = document.querySelector('.location');
 const searchLocation = document.querySelector('.button');
-const section = document.querySelector('section');
+const h2 = document.querySelector('h2');
+const cloudCover = document.querySelector('cloudCover');
+const summary = document.querySelector('summary');
+const temp = document.querySelector('temp');
+const windSpeed = document.querySelector('windSpeed');
 
 
 searchLocation.onclick = function(){
@@ -49,7 +53,8 @@ function isolateLocation(jsonLocation){
     let firstInstance = jsonLocation[0];
     let placeId = firstInstance.place_id;
     console.log(firstInstance.place_id);
-    getWeather(placeId)
+    getWeather(placeId);
+    displayResults(placeId);
 
 }
 
@@ -82,7 +87,16 @@ function displayResults(jsonWeather){
     //const weather = jsonWeather;
 
     //const displayWeather = document.createElement('p');
-    section.textContent = jsonWeather.current;
+
+    const header = (locationText.value).split(" ");
+    for (let i = 0; i < header.length; i++){
+        header[i] = header[i][0].toUpperCase() + header[i].substr(1);
+    }
+    header.join(" ");
+
+    h2.textContent = header;
+
+    //section.textContent = jsonWeather.current.;
 
 
    
