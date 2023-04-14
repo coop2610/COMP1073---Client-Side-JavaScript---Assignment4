@@ -74,7 +74,7 @@ function getWeather(placeId){
     displayResults(jsonWeather);
     console.log(jsonWeather);
 })
-.catch(error => section.textContent = `Could not fetch: ${error}`);
+//.catch(error => section.textContent = `Could not fetch: ${error}`);
 }
 
 
