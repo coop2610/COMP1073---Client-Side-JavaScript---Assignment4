@@ -18,7 +18,8 @@ const section = document.querySelector('section');
 
 searchLocation.onclick = function(){
     console.log(locationText.value);
-    url = `${baseURL}point?find_places=${locationText}&sections=current&timezone=auto&language=en&units=auto&key=${key}`;
+    //var locationName = locationText.value;
+    url = `${baseURL}point?find_places=${locationText.value}&sections=current&timezone=auto&language=en&units=auto&key=${key}`;
     console.log(url);
     fetch(url)
     .then(response => {
