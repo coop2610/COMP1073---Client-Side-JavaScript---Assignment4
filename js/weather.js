@@ -74,7 +74,7 @@ function getWeather(placeId){
 
 function displayResults(jsonWeather){
 
-    console.log(weather.current.summary);
+    console.log(jsonWeather.current.summary);
 
   
     //const loc = document.createElement('h2');
@@ -82,7 +82,7 @@ function displayResults(jsonWeather){
     //const weather = jsonWeather;
 
     const displayWeather = document.createElement('p');
-    displayWeather.textContent = weather.current.summary;
+    displayWeather.textContent = jsonWeather.current.summary;
 
 
    
