@@ -35,14 +35,14 @@ searchLocation.onclick = function(){
         return jsonLocation;
     })
     .then(function (jsonLocation){
-        displayResults(jsonLocation);
+        isolateLocation(jsonLocation);
     })
     .catch(error => section.textContent = `Could not fetch: ${error}`);
 
 }
 
 
-function displayResults(jsonLocation){
+function isolateLocation(jsonLocation){
     console.log(jsonLocation);
 
     console.log(jsonLocation[0]);
@@ -54,7 +54,7 @@ function displayResults(jsonLocation){
 }
 
 function getWeather(placeId){
-    urlWeather = `${baseURL}point?place_id=${placeId}&sections=current%2Chourly&timezone=auto&language=en&units=auto&key=${key}`;
+    urlWeather = `${baseURL}point?place_id=${placeId}&sections=current&timezone=auto&language=en&units=auto&key=${key}`;
     
     fetch(urlWeather)
     .then(response => {
@@ -65,41 +65,38 @@ function getWeather(placeId){
     return jsonWeather;
 })
 .then(function (jsonWeather){
-    //displayResults(jsonWeather);
+    displayResults(jsonWeather);
     console.log(jsonWeather);
 })
 .catch(error => section.textContent = `Could not fetch: ${error}`);
 }
 
 
+function displayResults(jsonWeather){
 
+    while (section.firstChild) {
+        section.removeChild(section.firstChild);
+    };
+  
+    //const loc = document.createElement('h2');
+    //const country = document.createElement('p');
+    
+    const weather = document.createElement('p');
+    weather.textContent = jsonWeather.current;
 
+        
+    
 
-
-
-
-
-/*
-while (section.firstChild) {
-    section.removeChild(section.firstChild);
-};
-let locations = json.response.docs;
-
-
-if (locations.length === 0){
-    const noResults = document.createElement('p');
-    noResults.textContent = 'No results returned.'
-    section.appendChild(noResults);
-} else {
-    for(let i = 0; i < locations.length; i++){
-        const loc = document.createElement('h2');
-        const country = document.createElement('p');
-        const lat = document.createElement('p');
-        const long = document.createElement('p');
-        const time = document.createElement('p');
-    }
 }
-*/
+
+
+
+
+
+
+
+
+
 
 
 /*
