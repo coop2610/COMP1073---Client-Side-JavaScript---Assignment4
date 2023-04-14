@@ -11,7 +11,7 @@ const baseURL = 'https://www.meteosource.com/api/v1/free/';
 const key = 'cldwoqx5laujdwap6embjr6r2z7b3g5bmpn9mvuf';
 let url;
 
-const locationText = document.querySelector('location');
+const locationText = document.querySelector('.location');
 const section = document.querySelector('section');
 const searchLocation = document.querySelector('.search');
 
