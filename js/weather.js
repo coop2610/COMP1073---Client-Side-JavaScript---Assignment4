@@ -48,11 +48,12 @@ function fetchResults(event){
         displayResults(json);
     })
 };
-*/
+
+
 function displayResults(json) {
     console.log(json);
 }
-/*
+
     while (section.firstChild) {
          section.removeChild(section.firstChild);
      };
