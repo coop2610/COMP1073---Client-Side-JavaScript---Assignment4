@@ -43,7 +43,6 @@ searchLocation.onclick = function(){
     .then(function (jsonLocation){
         //send data to functions isolateLocation
         isolateLocation(jsonLocation);
-        displayResults(locationName);
     })
 
 }
@@ -80,12 +79,12 @@ function getWeather(placeId){
 }
 
 //dislplay weather information 
-function displayResults(jsonWeather, locationName){
+function displayResults(jsonWeather){
 
     console.log(jsonWeather.current.summary);
 
-    //change location to camelcase
-    const header = (locationName).split(" ");
+    //change location to uppercase
+    const header = (locationText.value).split(" ");
     for (let i = 0; i < header.length; i++){
         header[i] = header[i].charAt(0).toUpperCase() + header[i].slice(1);
     }
