@@ -34,50 +34,70 @@ searchLocation.onclick = function(){
             throw new Error(`HTTP error: ${response.status}`);
         }
         //return response.text();
-        return response.json();
+        let placeJson = response.json();
+        return placeJson;
     })
     //.then(text => section.textContent = text)
-    .then(function (json){
-        displayResults(json);
+    .then(function (placeJson){
+        displayResults(placeJson);
     })
     .catch(error => section.textContent = `Could not fetch: ${error}`);
 
 }
 
 
-function displayResults(json){
-    console.log(json);
+function displayResults(placeJson){
+    console.log(placeJson);
 
     //let locations = json.response.docs;
-    console.log(json[0]);
-    let firstInstance = json[0];
+    console.log(placeJson[0]);
+    let firstInstance = placeJson[0];
+    let placeId = firstInstance.place_id;
     console.log(firstInstance.place_id);
-
-    /*
-    while (section.firstChild) {
-        section.removeChild(section.firstChild);
-    };
-    let locations = json.response.docs;
-
-
-    if (locations.length === 0){
-        const noResults = document.createElement('p');
-        noResults.textContent = 'No results returned.'
-        section.appendChild(noResults);
-    } else {
-        for(let i = 0; i < locations.length; i++){
-            const loc = document.createElement('h2');
-            const country = document.createElement('p');
-            const lat = document.createElement('p');
-            const long = document.createElement('p');
-            const time = document.createElement('p');
-        }
-    }
-    */
+    getWeather(placeId)
 
 }
+/*
+function getWeather(placeId){
+    urlWeather = `${baseURL}point?place_id=${placeId}&sections=current%2Chourly&timezone=auto&language=en&units=auto&key=${key}`;
+    
+    fetch(urlWeather)
+    .then(response => {
+    if (!response.ok){
+        throw new Error(`HTTP error: ${response.status}`);
+    }
+    //return response.text();
+    return response.json();
+})
+//.then(text => section.textContent = text)
+.then(function (json){
+    displayResults(json);
+})
+.catch(error => section.textContent = `Could not fetch: ${error}`);
+}
+*/
+
+/*
+while (section.firstChild) {
+    section.removeChild(section.firstChild);
+};
+let locations = json.response.docs;
 
 
+if (locations.length === 0){
+    const noResults = document.createElement('p');
+    noResults.textContent = 'No results returned.'
+    section.appendChild(noResults);
+} else {
+    for(let i = 0; i < locations.length; i++){
+        const loc = document.createElement('h2');
+        const country = document.createElement('p');
+        const lat = document.createElement('p');
+        const long = document.createElement('p');
+        const time = document.createElement('p');
+    }
+}
+*/
 
 
 /*
