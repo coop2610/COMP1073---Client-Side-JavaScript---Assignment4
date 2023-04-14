@@ -25,39 +25,34 @@ searchLocation.onclick = function(){
 
     url = `${baseURL}find_places?text=${locationText.value}&language=en&key=${key}`;
 
-
-    //url = `${baseURL}find_places?text=${locationText.value}&sections=current&timezone=auto&language=en&units=auto&key=${key}`;
     console.log(url);
     fetch(url)
     .then(response => {
         if (!response.ok){
             throw new Error(`HTTP error: ${response.status}`);
         }
-        //return response.text();
-        let placeJson = response.json();
-        return placeJson;
+        let jsonLocation = response.json();
+        return jsonLocation;
     })
-    //.then(text => section.textContent = text)
-    .then(function (placeJson){
-        displayResults(placeJson);
+    .then(function (jsonLocation){
+        displayResults(jsonLocation);
     })
     .catch(error => section.textContent = `Could not fetch: ${error}`);
 
 }
 
 
-function displayResults(placeJson){
-    console.log(placeJson);
+function displayResults(jsonLocation){
+    console.log(jsonLocation);
 
-    //let locations = json.response.docs;
-    console.log(placeJson[0]);
-    let firstInstance = placeJson[0];
+    console.log(jsonLocation[0]);
+    let firstInstance = jsonLocation[0];
     let placeId = firstInstance.place_id;
     console.log(firstInstance.place_id);
     getWeather(placeId)
 
 }
-/*
+
 function getWeather(placeId){
     urlWeather = `${baseURL}point?place_id=${placeId}&sections=current%2Chourly&timezone=auto&language=en&units=auto&key=${key}`;
     
@@ -66,16 +61,23 @@ function getWeather(placeId){
     if (!response.ok){
         throw new Error(`HTTP error: ${response.status}`);
     }
-    //return response.text();
-    return response.json();
+    let jsonWeather = response.json();
+    return jsonWeather;
 })
-//.then(text => section.textContent = text)
-.then(function (json){
-    displayResults(json);
+.then(function (jsonWeather){
+    //displayResults(jsonWeather);
+    console.log(jsonWeather);
 })
 .catch(error => section.textContent = `Could not fetch: ${error}`);
 }
-*/
+
+
+
+
+
+
+
+
 
 /*
 while (section.firstChild) {
