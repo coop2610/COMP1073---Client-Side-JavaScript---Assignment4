@@ -91,8 +91,8 @@ function displayResults(jsonWeather){
 
     //output data
     h2.textContent = 'Location: ' + title;
-    p.textContent = `Summary: ${summary}\nCloud Cover: ${cloudCover}\nTemperature: ${temp}
-    \nWind Speed: ${windSpeed}`;
+    p.textContent = `Summary: ${summary}, Cloud Cover: ${cloudCover}, Temperature: ${temp}
+    , Wind Speed: ${windSpeed}`;
    
 
 }
