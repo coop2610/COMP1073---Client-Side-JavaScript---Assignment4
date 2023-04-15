@@ -1,6 +1,6 @@
 /*
 
-	Assignment 2 | COMP1073-02 Client-Side JavaScript
+	Assignment 4 | COMP1073-02 Client-Side JavaScript
 
 	Group Members: 
 	Abimbola Fasawe - 200472319
